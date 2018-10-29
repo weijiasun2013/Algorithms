@@ -1,0 +1,10 @@
+Given an array of pairs, find all symmetric pairs in it
+Two pairs (a, b) and (c, d) are said to be symmetric if c is equal to b and a is equal to d. For example (10, 20) and (20, 10) are symmetric. Given an array of pairs find all symmetric pairs in it.
+It may be assumed that first elements of all pairs are distinct.
+Example:
+Input: arr[] = {{11, 20}, {30, 40}, {5, 10}, {40, 30}, {10, 5}}
+Output: Following pairs have symmetric pairs
+        (30, 40)
+        (5, 10)  
+We strongly recommend you to minimize your browser and try this yourself first.
+An Efficient Solution is to use Hashing. First element of pair is used as key and second element is used as value. The idea is traverse all pairs one by one. For every pair, check if its second element is in hash table. If yes, then compare the first element with value of matched entry of hash table. If the value and the first element match, then we found symmetric pairs. Else, insert first element as key and second element as value.

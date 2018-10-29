@@ -1,0 +1,19 @@
+Print all subarrays with 0 sum
+Given an array, print all subarrays in the array which has sum 0.
+Examples:
+Input:  arr = [6, 3, -1, -3, 4, -2, 2,
+             4, 6, -12, -7]
+Output:  
+Subarray found from Index 2 to 4
+Subarray found from Index 2 to 6          
+Subarray found from Index 5 to 6
+Subarray found from Index 6 to 9
+Subarray found from Index 0 to 10
+A better approach is to use Hashing.
+Do following for each element in the array
+1.	Maintain sum of elements encountered so far in a variable (say sum).
+2.	If current sum is 0, we found a subarray starting from index 0 and ending at index current index
+3.	Check if current sum exists in the hash table or not.
+4.	If current sum exists in the hash table, that means we have subarray(s) present with 0 sum that ends at current index.
+5.	Insert current sum into the hash table
+
