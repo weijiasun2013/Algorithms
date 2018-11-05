@@ -1,0 +1,8 @@
+check if a given linked list is palindrome
+
+example:
+1 -> 2 -> 1 -> null: is palindrome
+1 -> null : is palindrome
+1 -> 2 -> 2 => 1 -> null : is palindrome
+
+1 -> 2 _-> null: is not palindrome

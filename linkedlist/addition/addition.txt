@@ -1,0 +1,7 @@
+given two numbers represented by linked list. count the addition of them.
+
+for example:
+1 -> 2 -> 3 -> null: 123
+2 -> 9 -. null: 29
+addition rslt: 1 -> 5 -> 2 -> null
+

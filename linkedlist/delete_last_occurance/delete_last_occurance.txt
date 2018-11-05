@@ -1,0 +1,9 @@
+given a linked list and an item
+delete the last occurance of item in the given linked list
+
+example:
+1 -> 2 -> 1 -> null, item=1
+output: 1 -> 2 -> null
+
+1 -> null, item=1
+output: null
