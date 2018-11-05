@@ -2,3 +2,4 @@
 Algorithms Project
 
 --hashing
+--linkedlist
