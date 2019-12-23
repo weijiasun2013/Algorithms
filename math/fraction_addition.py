@@ -1,5 +1,7 @@
 
 # fraction addition
+# given two fractions (numerator and denominator), count the sum of them
+# the result should be the simplest result. (use common smallest multiple and common biggest divisor)
 
 def primes(num):
     lst = [x for x in range(2,num) if all(x%y!=0 for y in range(2,x))]
