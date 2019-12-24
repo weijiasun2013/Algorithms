@@ -3,7 +3,7 @@
 def all_subarry_with_zero_sum(arr):
     # Print all subarrays with 0 sum
 
-    d = {0:[-1]}
+    d = dict()
     sum = 0
     for idx,ele in enumerate(arr):
         sum += ele
@@ -14,10 +14,16 @@ def all_subarry_with_zero_sum(arr):
 
     rslt = []
     for k,lst in d.items():
-        if len(lst) > 1:
-            for sIdx in range(len(lst)-1):
-                for eIdx in range(sIdx+1,len(lst)):
-                    rslt.append((lst[sIdx]+1, lst[eIdx]))
+        if k == 0:
+            tmp = [-1] + lst
+        else:
+            tmp = lst
+        if len(tmp) == 2:
+            print(tmp[0]+1,tmp[1])
+        elif len(tmp) > 2:
+            for sIdx in range(len(tmp)-1):
+                for eIdx in range(sIdx+1,len(tmp)):
+                    rslt.append((tmp[sIdx]+1, tmp[eIdx]))
     return rslt
 
 def main():
