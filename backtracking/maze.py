@@ -1,7 +1,7 @@
 
 # maze problem
-# give a 2d array, each element's value represents the maximum pace from which it can reach in four directions
-# determin if there is a path from the top=left to the central point, if so display it
+# give a 2d array, each element's value represents the pace size by which it can reach in four directions
+# determin if there is a path from the top-left to the central point, if so display it
 
 import copy
 
