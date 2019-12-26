@@ -5,29 +5,29 @@
 
 import copy
 
-def helper(arr,idx,curSum,path,rslt):
-    if idx >= len(arr) or curSum <= 0:
-        if curSum == 0:
+def helper(src,idx,val,path,rslt):
+    if idx >= len(src) or val <= 0:
+        if val == 0:
             rslt.append(path)
         return
 
-    if idx == 0 or arr[idx] != arr[idx-1]:
+    if idx == 0 or src[idx] != src[idx-1]:
         path2 = copy.deepcopy(path)
-        path2.append(arr[idx])
-        helper(arr,idx,curSum-arr[idx],path2,rslt)
-    helper(arr,idx+1,curSum,path,rslt)
+        path2.append(src[idx])
+        helper(src,idx,val-src[idx],path2,rslt)
+    helper(src,idx+1,val,path,rslt)
 
-def operation_sum(arr,sum):
+def operation_sum(src,sum):
     rslt = []
-    helper(arr,0,sum,[],rslt)
+    helper(src,0,sum,[],rslt)
     return rslt
 
 def main():
     arr = [1,1,2,2,3,4]
     sum = 5
     rslt = operation_sum(arr,sum)
-    for idx in range(len(rslt)):
-        print(rslt[idx])
+    for row in rslt:
+        print(row)
 
 if __name__ == "__main__":
     main()
