@@ -18,7 +18,7 @@ def show(head):
     print(rslt)
 
 def reverse_linked_list(head):
-    if head is None or head.next is None:
+    if head is None:
         return head
 
     h,cur = head,head.next

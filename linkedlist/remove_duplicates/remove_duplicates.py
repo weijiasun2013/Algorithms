@@ -1,6 +1,7 @@
 
 '''
-remove duplicates in linked list
+remove duplicates in sorted linked list
+if unsorted, need a dictionary to support when processing the value
 '''
 
 class Node(object):
@@ -18,20 +19,13 @@ def show(head):
     print(rslt)
 
 def remove_duplicates(head):
-    if head is None or head.next is None:
-        return head
-
-    d = dict()
-    cur,prev = head.next,head
-    d[head.val] = 1
-    while cur:
-        if cur.val not in d:
-            d[cur.val] = 1
-            cur = cur.next
-            prev = prev.next
+    p = head
+    while p and p.next:
+        if p.val == p.next.val:
+            _next = p.next.next
+            p.next = _next
         else:
-            prev.next = cur.next
-            cur = prev.next
+            p = p.next
     return head
 
 def test1():
@@ -54,25 +48,13 @@ def test3():
     r = remove_duplicates(n1)
     show(r)
 
-def test4():
-    n1 = Node(1)
-    n2 = Node(2)
-    n3 = Node(1)
-    n4 = Node(2)
 
-    n1.next = n2
-    n2.next = n3
-    n3.next = n4
 
-    show(n1)
-    r = remove_duplicates(n1)
-    show(r)
 
 def main():#
     test1()
     test2()
     test3()
-    test4()
 
 if __name__ == '__main__':
     main()
