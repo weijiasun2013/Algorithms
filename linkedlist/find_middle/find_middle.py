@@ -9,6 +9,10 @@ class Node(object):
         self.next = None
 
 def show(head):
+    if head is None:
+        print('null')
+        return
+
     h = head
     rslt = ''
     while h:
