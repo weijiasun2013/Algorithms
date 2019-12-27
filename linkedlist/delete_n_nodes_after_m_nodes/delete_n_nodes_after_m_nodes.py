@@ -1,5 +1,6 @@
-
-# reserve first, then delete the iirst occurance, then reverse
+'''
+keep M nodes and delete N nodes, continously do it until getting the ending
+'''
 
 class Node(object):
     def __init__(self,val):

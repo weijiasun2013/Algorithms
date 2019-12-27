@@ -1,4 +1,3 @@
-
 '''
 find middle of linked list
 '''

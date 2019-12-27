@@ -1,5 +1,7 @@
+'''
+delete the middle node, if having two middles, delete the second one
+'''
 
-# reserve first, then delete the iirst occurance, then reverse
 
 class Node(object):
     def __init__(self,val):
