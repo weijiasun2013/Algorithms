@@ -1,6 +1,14 @@
 
 '''
 remove elements in linked list whose sum is equal to zero
+
+Strategy description:
+    Since it is linked list, not an array, using dict only is not enough when deleting.
+    we use a stack and a queue, insert all position node in stack,
+    if got negative node, count sum with past positive nodes and move them from stack to quene
+    if sum got zero, delete all positive nodes directly from queue,
+    if sum never got zero when stack was consumed, move all from queue to stack
+ 
 '''
 
 class Node(object):
