@@ -4,7 +4,7 @@
 # find out how to pick up items whose sum of weight is not beyond the knapsack's capacity and whose value is most
 
 def knapsack01(capacity,wArr,vArr):
-    dp = [ [x for x in range(capacity+1)] for y in range(len(vArr)+1)]
+    dp = [ [0 for x in range(capacity+1)] for y in range(len(vArr)+1)]
     for row in range(len(vArr)+1):
         for col in range(capacity+1):
             if row == 0 or col == 0:
