@@ -14,8 +14,8 @@ def subset_sum(arr,sum):
                 dp[row][col] = True 
             else:
                 dp[row][col] = dp[row-1][col]
-                if col >= arr[row]:
-                    diff = col - arr[row]
+                if col >= arr[row-1]:
+                    diff = col - arr[row-1]
                     dp[row][col] |= dp[row-1][diff]
                     if dp[row][col] == True and col == sum:
                         return True
@@ -23,7 +23,7 @@ def subset_sum(arr,sum):
 
 def main():
     sum = 11
-    arr = [1,2,3,4,5]
+    arr = [2,3,4,5]
     rslt = subset_sum(arr,sum)
     print(rslt)
 

@@ -1,3 +1,0 @@
-
-the folder contains all dynamic programming questions.
-Copy rights 2019
