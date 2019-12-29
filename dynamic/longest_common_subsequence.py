@@ -3,7 +3,7 @@
 # give two strings, return the common subsequence
 
 def longest_common_subsequence(s1,s2):
-    dp = [ [x for x in range(len(s1)+1)] for y in range(len(s2)+1)]
+    dp = [ [0 for x in range(len(s1)+1)] for y in range(len(s2)+1)]
     for row in range(len(s2)+1):
         for col in range(len(s1)+1):
             if row == 0 or col == 0:

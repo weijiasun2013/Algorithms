@@ -11,8 +11,7 @@ def minimum_jump(arr):
 
     for idx in range(1, len(arr)):
         for pIdx in range(idx):
-            if arr[pIdx] >= idx - pIdx:
-                if dp[idx] > dp[pIdx] + 1:
+            if pIdx + arr[pIdx] >= idx and dp[pIdx] + 1 < dp[idx]:
                     dp[idx] = dp[pIdx] + 1
     return dp[-1]
 
