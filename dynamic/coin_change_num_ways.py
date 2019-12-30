@@ -1,6 +1,7 @@
 
 # coin change with differnt number of ways
 # givne a set of coins with different value and a total, count how many ways to do the change
+# the same coin could be picked up more than one for a single way
 
 import sys
 

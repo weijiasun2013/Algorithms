@@ -1,6 +1,7 @@
 
 # coin change with minimum numbers
 # given a set of coins with different value and a total, pick up minimum number of coins whose sum equals total
+# the same coin could only be picked up one time for each time
 
 import sys
 
