@@ -1,6 +1,9 @@
+'''
+ egg drop
 
-# egg drop
-# ginve some number of eggs and floor, find out the miniimum steps that needs to take to find out from which floor egg will break
+ ginve some number of eggs and floor, find out the miniimum steps 
+ that needs to take to find out from which floor egg will break
+'''
 
 import sys
 
