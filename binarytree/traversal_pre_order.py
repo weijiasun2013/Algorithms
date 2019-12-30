@@ -1,6 +1,6 @@
 '''
- binary search tree - in proder traversal
- left,node,right
+ binary search tree - pre proder traversal
+ node,left,right
 '''
 
 class Node(object):
@@ -9,13 +9,13 @@ class Node(object):
         self.left = None
         self.right = None
 
-def traversal_in_order(root):
+def traversal_pre_order(root):
     if root is None:
         return
-
-    traversal_in_order(root.left)
+    
     print(root.val)
-    traversal_in_order(root.right)
+    traversal_pre_order(root.left)
+    traversal_pre_order(root.right)
 
 def main():
     n1 = Node(1)
@@ -29,7 +29,7 @@ def main():
     n2.left,n2.right = n4,n5
     n3.left,n3.right = n6, n7
 
-    traversal_in_order(n1)
+    traversal_pre_order(n1)
 
 if __name__ == '__main__':
     main()
