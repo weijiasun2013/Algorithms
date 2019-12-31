@@ -7,3 +7,4 @@ Algorithms Project
 --backtracking
 --graph
 --math
+--binary tree

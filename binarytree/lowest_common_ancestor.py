@@ -2,8 +2,13 @@
 
 '''
  lowest common ancestor in binary tree (value of each node is arbitrary)
- traversal the tree, if got the object node then return it. otherwise return None
- judge the ancestor based on return object
+ traversal the tree, the final judgement would be made by the root node1
+ i
+ f got the object node then return it. otherwise return None
+ once got the valid return, then all subtree under that node would not be traversed
+ after the traversal, if a node got two valid return from left and right side, the node is the answer
+ if only one got the valid, then the node is also the answer, since the onter node is in that subtree
+
 '''
 
 class Node(object):
