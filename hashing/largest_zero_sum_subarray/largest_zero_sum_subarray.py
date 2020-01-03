@@ -3,18 +3,18 @@
 def largest_zero_sum_subarray(arr):
     # given an array, find the larget subarray whose sum is zero
 
-    dct_pre_sum = dict()
+    dct = {0:-1} # for case such that the array has some 0s at the heading
     sum = 0
     length,rslt = 0,None
     for idx,ele in enumerate(arr):
         sum += ele
-        if sum not in dct_pre_sum:
-            dct_pre_sum[sum] = idx
+        if sum not in dct:
+            dct[sum] = idx
         else:
-            l = idx - dct_pre_sum[sum]
+            l = idx - dct[sum]
             if l > length:
                 length = l
-                rslt = (dct_pre_sum[sum]+1,idx)
+                rslt = (dct[sum]+1,idx)
     return length, rslt
 
 def main():
