@@ -17,14 +17,12 @@ def lowest_common_ancestor(root,node1,node2):
     while n:
         if node1.val == n.val or node2.val == n.val:
             return n
-        elif min(node1.val,node2.val) < n.val and max(node1.val,node2.val) > n.val:
-            return n
         elif min(node1.val,node2.val) > n.val:
             n = n.right
         elif max(node1.val,node2.val) < n.val:
             n = n.left
         else:
-            return None
+            return n
     return None
 
 def test1():
