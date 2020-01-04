@@ -3,7 +3,7 @@
 # give a string, find out the longest palindrome substring of it
 
 def longest_palindrome_substring(s):
-    dp = [ [x for x in range(len(s))] for y in range(len(s))]
+    dp = [ [0 for x in range(len(s))] for y in range(len(s))]
     _max,_sIdx = 0, -1
 
     for length in range(1,len(s)+1):

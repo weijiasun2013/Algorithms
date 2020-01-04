@@ -3,7 +3,7 @@
 # give a string, find out the longest palindrome subsequence
 
 def longest_palindrome_subsequence(s):
-    dp = [ [x for x in range(len(s))] for y in range(len(s))]
+    dp = [ [0 for x in range(len(s))] for y in range(len(s))]
     for length in range(1,len(s)+1):
         for sIdx in range(0, len(s)-length+1):
             eIdx = sIdx + length - 1
