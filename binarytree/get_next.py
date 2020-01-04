@@ -17,12 +17,8 @@ class Node(object):
 
 def helper(root):
     n = root
-    while n.up:
-        up = n.up
-        if up.right == n:
-            n = up
-        else:
-            break
+    while n.up and n.up.right == n:
+        n = n.up
 
     if n.up:
         return n.up
@@ -36,7 +32,7 @@ def get_next(root,node):
         return None
 
     # condition 1
-    if node.right is not None:
+    if node.right:
         n = node.right
         while n.left:
             n = n.left
