@@ -5,69 +5,76 @@ add 1 to a number that was represented by a linked list
 '''
 
 class Node(object):
-    def __init__(self,value):
-        self.val = value
+    def __init__(self,val):
+        self.val = val
         self.next = None
 
-def show(head):
-    h = head
+def show(node):
+    if node is None:
+        print('null')
+        return
+
     rslt = ''
-    while h:
-        rslt += str(h.val) + ' -> '
-        h = h.next
-    rslt += 'null'
+    n = node
+    while n:
+        rslt += str(n.val) + " -> "
+        n = n.next
+    rslt += ' null '
     print(rslt)
+
+def reverse(node):
+    if node is None:
+        return node
+
+    head,cur = node,node.next
+    head.next = None
+    while cur:
+        tmp = cur.next
+        cur.next = head
+        head = cur
+        cur = tmp
+    return head
+
+def helper(val,flag,pnt,prev):
+    v = val + flag
+    if v > 9:
+        v = v - 10
+        flag = 1
+    else:
+        flag = 0
+    pnt.val = v
+    prev = pnt
+
+    return pnt,flag,prev
+
 
 def add_one(head):
     if head is None:
-        n = Node(1)
-        return n
+        return Node(1)
 
-    r = reverse_linked_list(head)
-    p = r
-    ans = 1
-    while p:
-        v = p.val + ans
-        ans = 0
-        if v > 9:
-            v -= 10
-            ans = 1
-        p.val = v
-        if p.next is None:
-            if ans > 0:
-                n = Node(ans)
-                ans = 0
-                p.next = n
-        p = p.next
-
-    r2 = reverse_linked_list(r)
-    return r2
-
-def reverse_linked_list(head):
-    if head is None or head.next is None:
-        return head
-
-    h,cur = head,head.next
-    h.next = None
-    while cur:
-        _next = cur.next
-        cur.next = h
-        h = cur
-        cur = _next
-
-    return h
+    h1 = reverse(head)
+    pnt,flag,prev = h1,1,None
+    while pnt:
+        pnt,flag,prev = helper(pnt.val,flag,pnt,prev)
+        pnt = pnt.next
+    if flag:
+        n = Node(flag)
+        prev.next = n
+    return reverse(h1)
 
 def test1():
     n1 = None
     show(n1)
     r = add_one(n1)
     show(r)
+    print("")
 
 def test2():
     n1 = Node(9)
     show(n1)
     r = add_one(n1)
     show(r)
+    print("")
 
 def test3():
     n1 = Node(1)
@@ -76,6 +83,7 @@ def test3():
     show(n1)
     r = add_one(n1)
     show(r)
+    print("")
 
 def test4():
     n1 = Node(2)
@@ -90,12 +98,14 @@ def test4():
     show(n1)
     r = add_one(n1)
     show(r)
+    print("")
 
-def main():#
+def main():
     test1()
     test2()
     test3()
     test4()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
+
