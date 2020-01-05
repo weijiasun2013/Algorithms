@@ -1,6 +1,8 @@
 
 
-# reserve first, then delete the iirst occurance, then reverse
+'''
+  delete the last occurance of the item in a given linked list
+'''
 
 class Node(object):
     def __init__(self,val):
