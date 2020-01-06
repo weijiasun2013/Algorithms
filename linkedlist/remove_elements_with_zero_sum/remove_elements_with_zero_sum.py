@@ -45,7 +45,7 @@ def remove_elements_with_zero_sum(head):
                     _lst = []
                     break
             if flag == False:
-                for ele in _lst:
+                for ele in _lst[::-1]:
                     _stack.append(ele)
                 _stack.append(start)
         start = start.next
